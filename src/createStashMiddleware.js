@@ -1,7 +1,7 @@
 import { REHYDRATE } from './actionTypes';
 import { isNil, pluck, warning, zipObj } from './utils';
 
-const createStashMiddleware = stashes => {
+const createStashMiddleware = (...stashes) => {
   const cache = {};
   const writableStashes = stashes.filter(({ readOnly }) => !readOnly);
 
