@@ -34,7 +34,7 @@ const createStashMiddleware = (...stashes) => {
         const value = selector(state);
 
         if (!cache.hasOwnProperty(name) || cache[name] !== value) {
-          if (value == null) {
+          if (isNil(value)) {
             storage.remove().catch(warning);
           } else {
             storage.set(value).catch(warning);
