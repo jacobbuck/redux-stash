@@ -1,5 +1,8 @@
 import { REHYDRATE } from './actionTypes';
-import { isNil, pluck, warning, zipObj } from './utils';
+import isNil from './utils/isNil';
+import pluck from './utils/pluck';
+import warning from './utils/warning';
+import zipObj from './utils/zipObj';
 
 const createStashMiddleware = (...stashes) => {
   const cache = {};
