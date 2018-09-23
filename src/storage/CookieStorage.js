@@ -1,35 +1,18 @@
 import * as Cookies from 'js-cookie';
 import Storage from './Storage';
+import promisify from '../utils/promisify';
 
 class CookieStorage extends Storage {
   get() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(Cookies.get(this.key));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => Cookies.get(this.key));
   }
 
   set(value) {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(Cookies.set(this.key, value, this.options));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => Cookies.set(this.key, value, this.options));
   }
 
   remove() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(Cookies.remove(this.key, this.options));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => Cookies.remove(this.key, this.options));
   }
 }
 

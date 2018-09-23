@@ -1,34 +1,17 @@
 import Storage from './Storage';
+import promisify from '../utils/promisify';
 
 class SessionStorage extends Storage {
   get() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(sessionStorage.getItem(this.key));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => sessionStorage.getItem(this.key));
   }
 
   set(value) {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(sessionStorage.setItem(this.key, value));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => sessionStorage.setItem(this.key, value));
   }
 
   remove() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(sessionStorage.removeItem(this.key, value));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => sessionStorage.removeItem(this.key, value));
   }
 }
 

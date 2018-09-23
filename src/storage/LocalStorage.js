@@ -1,34 +1,17 @@
 import Storage from './Storage';
+import promisify from '../utils/promisify';
 
 class LocalStorage extends Storage {
   get() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(localStorage.getItem(this.key));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => localStorage.getItem(this.key));
   }
 
   set(value) {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(localStorage.setItem(this.key, value));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => localStorage.setItem(this.key, value));
   }
 
   remove() {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(localStorage.removeItem(this.key, value));
-      } catch (error) {
-        reject(error);
-      }
-    });
+    return promisify(() => localStorage.removeItem(this.key, value));
   }
 }
 
