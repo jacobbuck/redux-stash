@@ -5,8 +5,9 @@ test('calls console.error when available', () => {
   const spy = jest.fn();
   console.error = spy;
   try {
-    warning(new Error('hi'));
-    expect(spy).toHaveBeenCalled();
+    const error = new Error('hi');
+    warning(error);
+    expect(spy).toHaveBeenCalled(error);
   } finally {
     spy.mockClear();
     console.error = originalConsoleError;
