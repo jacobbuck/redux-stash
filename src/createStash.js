@@ -5,7 +5,7 @@ const createStash = ({ name, readOnly = false, selector, storage }) => {
     if (typeof name !== 'string') {
       throw new TypeError('Expected "name" to be a string.');
     }
-    if (typeof options !== 'boolean') {
+    if (typeof readOnly !== 'boolean') {
       throw new TypeError('Expected "readOnly" to be a boolean.');
     }
     if (typeof selector !== 'function') {
