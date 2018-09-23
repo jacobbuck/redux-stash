@@ -11,13 +11,13 @@ test('get method returns a Promise which resolves value from localStorage', asyn
   await expect(storage.get()).resolves.toBe('bar');
 });
 
-test('get method returns a Promise which resolves when value is set in localStorage', async () => {
+test('set method returns a Promise which resolves when value is set in localStorage', async () => {
   const storage = new LocalStorage('foo');
   await expect(storage.set('bar')).resolves.toBeUndefined();
   expect(localStorage.getItem('foo')).toBe('bar');
 });
 
-test('get method returns a Promise which resolves when value is removed from localStorage', async () => {
+test('remove method returns a Promise which resolves when value is removed from localStorage', async () => {
   const storage = new LocalStorage('foo');
   localStorage.setItem('foo', 'bar');
   await expect(storage.remove()).resolves.toBeUndefined();

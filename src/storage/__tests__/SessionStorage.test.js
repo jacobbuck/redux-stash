@@ -11,13 +11,13 @@ test('get method returns a Promise which resolves value from sessionStorage', as
   await expect(storage.get()).resolves.toBe('bar');
 });
 
-test('get method returns a Promise which resolves when value is set in sessionStorage', async () => {
+test('set method returns a Promise which resolves when value is set in sessionStorage', async () => {
   const storage = new SessionStorage('foo');
   await expect(storage.set('bar')).resolves.toBeUndefined();
   expect(sessionStorage.getItem('foo')).toBe('bar');
 });
 
-test('get method returns a Promise which resolves when value is removed from sessionStorage', async () => {
+test('remove method returns a Promise which resolves when value is removed from sessionStorage', async () => {
   const storage = new SessionStorage('foo');
   sessionStorage.setItem('foo', 'bar');
   await expect(storage.remove()).resolves.toBeUndefined();
