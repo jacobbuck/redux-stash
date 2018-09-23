@@ -1,5 +1,5 @@
 export const AsyncStorage = {
-  getItem: jest.fn(key => Promise.resolve(null)),
+  getItem: jest.fn(() => Promise.resolve(null)),
   setItem: jest.fn(() => Promise.resolve(null)),
   removeItem: jest.fn(() => Promise.resolve(null)),
   getAllKeys: jest.fn(() => Promise.resolve(null)),
