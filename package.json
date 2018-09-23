@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "babel src --out-dir lib --ignore '**/__tests__'",
+    "build": "babel src --out-dir lib --ignore '**/__tests__' --source-maps",
     "precommit": "lint-staged",
     "prepare": "npm run build",
     "test": "jest"
