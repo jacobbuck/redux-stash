@@ -11,7 +11,7 @@ class LocalStorage extends Storage {
   }
 
   remove() {
-    return promisify(() => localStorage.removeItem(this.key, value));
+    return promisify(() => localStorage.removeItem(this.key));
   }
 }
 

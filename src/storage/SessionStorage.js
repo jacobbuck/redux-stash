@@ -11,7 +11,7 @@ class SessionStorage extends Storage {
   }
 
   remove() {
-    return promisify(() => sessionStorage.removeItem(this.key, value));
+    return promisify(() => sessionStorage.removeItem(this.key));
   }
 }
 
