@@ -7,7 +7,7 @@ test('calls console.error when available', () => {
   try {
     const error = new Error('hi');
     warning(error);
-    expect(spy).toHaveBeenCalled(error);
+    expect(spy).toHaveBeenCalledWith(error);
   } finally {
     spy.mockClear();
     console.error = originalConsoleError;
