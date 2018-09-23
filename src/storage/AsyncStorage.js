@@ -7,7 +7,7 @@ class AsyncStorage extends Storage {
   }
 
   set(value) {
-    return ReactNativeAsyncStorage.getItem(this.key, value);
+    return ReactNativeAsyncStorage.setItem(this.key, value);
   }
 
   remove() {
