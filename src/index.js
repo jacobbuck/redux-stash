@@ -2,7 +2,7 @@ import { REHYDRATE } from './actionTypes';
 import createStash from './createStash';
 import createStashMiddleware from './createStashMiddleware';
 import rehydrateStore from './rehydrateStore';
-import AsyncStorage from './storage/AsyncStorage';
+// import AsyncStorage from './storage/AsyncStorage';
 import CookieStorage from './storage/CookieStorage';
 import LocalStorage from './storage/LocalStorage';
 import SessionStorage from './storage/SessionStorage';
@@ -13,7 +13,7 @@ export {
   createStash,
   createStashMiddleware,
   rehydrateStore,
-  AsyncStorage,
+  // AsyncStorage,
   CookieStorage,
   LocalStorage,
   SessionStorage,
