@@ -1,6 +1,11 @@
 import Storage from './storage/Storage';
 
-const createStash = ({ name, readOnly = false, selector, storage }) => {
+const createStash = ({
+  name,
+  readOnly = false,
+  selector = () => {},
+  storage,
+}) => {
   if (process.env.NODE_ENV !== 'production') {
     if (typeof name !== 'string') {
       throw new TypeError('Expected "name" to be a string.');
