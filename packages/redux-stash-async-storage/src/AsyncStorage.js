@@ -1,7 +1,7 @@
 import { AsyncStorage as ReactNativeAsyncStorage } from 'react-native';
-import Storage from './Storage';
+import { Storage } from 'redux-stash';
 
-class AsyncStorage extends Storage {
+export class AsyncStorage extends Storage {
   get() {
     return ReactNativeAsyncStorage.getItem(this.key);
   }

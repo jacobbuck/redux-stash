@@ -1,0 +1,33 @@
+{
+  "name": "redux-stash-cookie-storage",
+  "version": "0.1.0",
+  "description": "Persist and rehydrate parts or all of your Redux store.",
+  "main": "lib/CookieStorage.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "../../node_modules/.bin/babel src --out-dir lib --ignore '**/__mocks__','**/__tests__' --source-maps",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobbuck/redux-stash.git"
+  },
+  "keywords": [
+    "redux-stash",
+    "redux-stash-storage",
+    "cookie",
+    "cookies"
+  ],
+  "author": "Jacob Buck <buck.jacob@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobbuck/redux-stash/issues"
+  },
+  "homepage": "https://github.com/jacobbuck/redux-stash#readme",
+  "dependencies": {
+    "js-cookie": "^2.2.0",
+    "redux-stash": "^0.1.0"
+  }
+}
