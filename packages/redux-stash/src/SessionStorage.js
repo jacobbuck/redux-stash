@@ -1,4 +1,4 @@
-import { Storage } from 'redux-stash';
+import Storage from './Storage';
 
 class SessionStorage extends Storage {
   get() {

@@ -1,4 +1,4 @@
-import Storage from './storage/Storage';
+import Storage from './Storage';
 
 const createStash = ({
   name,
