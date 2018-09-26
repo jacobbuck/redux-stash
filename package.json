@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "precommit": "lint-staged",
     "test": "jest"
   },
   "devDependencies": {
@@ -18,5 +17,9 @@
     "prettier": "^1.14.3",
     "regenerator-runtime": "^0.12.1"
   },
-  "name": "redux-stash"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
