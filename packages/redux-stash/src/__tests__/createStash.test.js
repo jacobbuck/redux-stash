@@ -1,5 +1,5 @@
 import createStash from '../createStash';
-import LocalStorage from '../storage/LocalStorage';
+import LocalStorage from '../LocalStorage';
 
 const defaultSelector = state => state.foo;
 const defaultStorage = new LocalStorage('foo');
