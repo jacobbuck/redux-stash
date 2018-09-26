@@ -1,6 +1,6 @@
 {
   "name": "redux-stash-cookie-storage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Persist and rehydrate parts or all of your Redux store.",
   "main": "lib/CookieStorage.js",
   "files": [
@@ -29,6 +29,6 @@
   "homepage": "https://github.com/jacobbuck/redux-stash#readme",
   "dependencies": {
     "js-cookie": "^2.2.0",
-    "redux-stash": "^0.1.0"
+    "redux-stash": "^0.1.1"
   }
 }
