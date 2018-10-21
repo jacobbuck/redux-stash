@@ -5,27 +5,41 @@ const defaultSelector = state => state.foo;
 const defaultStorage = new LocalStorage('foo');
 
 test('returns an object', () => {
-  const stash = createStash({
-    name: 'foo',
-    selector: defaultSelector,
-    storage: defaultStorage,
-  });
-  expect(stash).toEqual({
+  expect(
+    createStash({
+      name: 'foo',
+      selector: defaultSelector,
+      storage: defaultStorage,
+    })
+  ).toEqual({
     name: 'foo',
     readOnly: false,
+    selector: expect.any(Function),
+    storage: expect.any(LocalStorage),
+  });
+  expect(
+    createStash({
+      name: 'foo',
+      readOnly: true,
+      storage: defaultStorage,
+    })
+  ).toEqual({
+    name: 'foo',
+    readOnly: true,
     selector: expect.any(Function),
     storage: expect.any(LocalStorage),
   });
 });
 
 test('ignores invalid properties', () => {
-  const stash = createStash({
-    name: 'foo',
-    selector: defaultSelector,
-    storage: defaultStorage,
-    foo: 'bar',
-  });
-  expect(stash).not.toHaveProperty('foo', 'bar');
+  expect(
+    createStash({
+      name: 'foo',
+      selector: defaultSelector,
+      storage: defaultStorage,
+      foo: 'bar',
+    })
+  ).not.toHaveProperty('foo', 'bar');
 });
 
 test("throws an error when name isn't a string", () => {
