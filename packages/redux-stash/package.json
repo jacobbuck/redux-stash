@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "../../node_modules/.bin/babel src --out-dir lib --ignore '**/__mocks__','**/__tests__' --source-maps",
+    "coverage": "../../node_modules/.bin/jest --coverage",
     "prepare": "npm run build",
     "test": "../../node_modules/.bin/jest"
   },
