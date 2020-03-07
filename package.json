@@ -7,16 +7,16 @@
     "test": "lerna run test"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-jest": "^24.8.0",
-    "husky": "^2.3.0",
-    "jest": "^24.8.0",
-    "lerna": "^3.14.1",
-    "lint-staged": "^8.1.7",
-    "prettier": "^1.17.1",
-    "rollup": "^1.13.1",
-    "rollup-plugin-babel": "^4.3.2"
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-jest": "^25.1.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "rollup": "^2.0.2",
+    "rollup-plugin-babel": "^4.4.0"
   },
   "husky": {
     "hooks": {
