@@ -1,8 +1,15 @@
 import * as Cookies from 'js-cookie';
 import { Storage } from 'redux-stash';
 
-function CookieStorage() {
-  Storage.apply(this, arguments);
+function CookieStorage(key, options = {}) {
+  Storage.call(this, key);
+
+  if (process.env.NODE_ENV !== 'production') {
+    if (typeof options !== 'object') {
+      throw new TypeError('Expected the options to be an object.');
+    }
+  }
+  this.options = options;
 }
 
 CookieStorage.prototype = Object.create(Storage.prototype);
