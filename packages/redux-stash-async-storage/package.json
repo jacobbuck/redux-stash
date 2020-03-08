@@ -33,6 +33,6 @@
     "redux-stash": "^0.1.3"
   },
   "peerDependencies": {
-    "react-native": "*"
+    "@react-native-community/async-storage": "*"
   }
 }

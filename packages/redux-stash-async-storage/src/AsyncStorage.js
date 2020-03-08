@@ -1,4 +1,4 @@
-import { AsyncStorage as ReactNativeAsyncStorage } from 'react-native';
+import ReactNativeAsyncStorage from '@react-native-community/async-storage';
 import { Storage } from 'redux-stash';
 
 function AsyncStorage() {
