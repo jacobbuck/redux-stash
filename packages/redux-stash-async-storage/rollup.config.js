@@ -12,6 +12,6 @@ export default {
       format: 'esm',
     }
   ],
-  external: ['redux-stash', 'react-native'],
+  external: ['@react-native-community/async-storage', 'redux-stash'],
   plugins: [babel()],
 };
