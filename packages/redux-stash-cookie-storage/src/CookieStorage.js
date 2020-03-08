@@ -2,13 +2,17 @@ import * as Cookies from 'js-cookie';
 import { Storage } from 'redux-stash';
 
 function CookieStorage(key, options = {}) {
-  Storage.call(this, key);
-
   if (process.env.NODE_ENV !== 'production') {
+    if (!(this instanceof CookieStorage)) {
+      throw new TypeError('Cannot call a class as a function');
+    }
     if (typeof options !== 'object') {
       throw new TypeError('Expected the options to be an object.');
     }
   }
+
+  Storage.call(this, key);
+
   this.options = options;
 }
 

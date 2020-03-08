@@ -1,6 +1,12 @@
 import Storage from './Storage';
 
 function SessionStorage() {
+  if (process.env.NODE_ENV !== 'production') {
+    if (!(this instanceof SessionStorage)) {
+      throw new TypeError('Cannot call a class as a function');
+    }
+  }
+
   Storage.apply(this, arguments);
 }
 

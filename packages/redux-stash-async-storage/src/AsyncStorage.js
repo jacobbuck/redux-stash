@@ -2,6 +2,12 @@ import { AsyncStorage as ReactNativeAsyncStorage } from 'react-native';
 import { Storage } from 'redux-stash';
 
 function AsyncStorage() {
+  if (process.env.NODE_ENV !== 'production') {
+    if (!(this instanceof CookieStorage)) {
+      throw new TypeError('Cannot call a class as a function');
+    }
+  }
+
   Storage.apply(this, arguments);
 }
 
