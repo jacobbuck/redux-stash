@@ -10,7 +10,7 @@ export default {
     {
       file: 'lib/AsyncStorage.esm.js',
       format: 'esm',
-    }
+    },
   ],
   external: ['@react-native-community/async-storage', 'redux-stash'],
   plugins: [babel()],
