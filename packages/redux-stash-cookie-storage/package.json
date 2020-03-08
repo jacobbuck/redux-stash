@@ -2,7 +2,8 @@
   "name": "redux-stash-cookie-storage",
   "version": "0.1.3",
   "description": "Persist and rehydrate parts or all of your Redux store.",
-  "main": "lib/CookieStorage.js",
+  "main": "lib/CookieStorage.cjs.js",
+  "module": "lib/CookieStorage.esm.js",
   "files": [
     "lib"
   ],

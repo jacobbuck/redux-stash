@@ -2,7 +2,8 @@
   "name": "redux-stash",
   "version": "0.1.3",
   "description": "Persist and rehydrate parts or all of your Redux store.",
-  "main": "lib/index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
   "files": [
     "lib"
   ],

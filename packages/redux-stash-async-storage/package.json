@@ -2,7 +2,8 @@
   "name": "redux-stash-async-storage",
   "version": "0.1.3",
   "description": "Persist and rehydrate parts or all of your Redux store.",
-  "main": "lib/AsyncStorage.js",
+  "main": "lib/AsyncStorage.cjs.js",
+  "module": "lib/AsyncStorage.esm.js",
   "files": [
     "lib"
   ],
