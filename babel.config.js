@@ -1,4 +1,4 @@
-module.exports = api => {
+module.exports = (api) => {
   if (api.env('test')) {
     return {
       presets: [['@babel/preset-env', { targets: { node: 'current' } }]],
@@ -6,6 +6,6 @@ module.exports = api => {
   }
 
   return {
-    presets: ['@babel/preset-env'],
+    presets: [['@babel/preset-env', { loose: true }]],
   };
 };
