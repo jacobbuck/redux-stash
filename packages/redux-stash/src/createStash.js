@@ -8,16 +8,16 @@ const createStash = ({
 }) => {
   if (process.env.NODE_ENV !== 'production') {
     if (typeof name !== 'string') {
-      throw new TypeError('Expected "name" to be a string');
+      throw new TypeError('Expected "name" to be a string.');
     }
     if (typeof readOnly !== 'boolean') {
-      throw new TypeError('Expected "readOnly" to be a boolean');
+      throw new TypeError('Expected "readOnly" to be a boolean.');
     }
     if (typeof selector !== 'function') {
-      throw new TypeError('Expected "selector" to be a function');
+      throw new TypeError('Expected "selector" to be a function.');
     }
     if (!(storage instanceof Storage)) {
-      throw new TypeError('Expected "storage" to be an instance of Storage');
+      throw new TypeError('Expected "storage" to be an instance of Storage.');
     }
   }
   return {

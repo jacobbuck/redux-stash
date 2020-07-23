@@ -4,7 +4,7 @@ import { Storage } from 'redux-stash';
 function AsyncStorage() {
   if (process.env.NODE_ENV !== 'production') {
     if (!(this instanceof CookieStorage)) {
-      throw new TypeError('Cannot call a class as a function');
+      throw new TypeError('Cannot call a class as a function.');
     }
   }
 

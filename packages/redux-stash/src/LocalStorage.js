@@ -3,7 +3,7 @@ import Storage from './Storage';
 function LocalStorage() {
   if (process.env.NODE_ENV !== 'production') {
     if (!(this instanceof LocalStorage)) {
-      throw new TypeError('Cannot call a class as a function');
+      throw new TypeError('Cannot call a class as a function.');
     }
   }
 
