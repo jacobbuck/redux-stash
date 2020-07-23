@@ -1,6 +1,6 @@
 import { REHYDRATE } from './actionTypes';
 
-const rehydrateStore = store =>
+const rehydrateStore = (store) =>
   store.dispatch({
     type: REHYDRATE,
   });

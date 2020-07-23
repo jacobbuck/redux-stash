@@ -1,7 +1,7 @@
 import createStash from '../createStash';
 import LocalStorage from '../LocalStorage';
 
-const defaultSelector = state => state.foo;
+const defaultSelector = (state) => state.foo;
 const defaultStorage = new LocalStorage('foo');
 
 test('returns an object', () => {
@@ -118,7 +118,7 @@ test("throws an error when selector isn't a function", () => {
   expect(() =>
     createStash({
       name: 'foo',
-      selector: new function Foo() {}(),
+      selector: new (function Foo() {})(),
       storage: defaultStorage,
     })
   ).toThrow();
@@ -143,14 +143,14 @@ test("throws an error when storage isn't an instanceof Storage", () => {
     createStash({
       name: 'foo',
       selector: defaultSelector,
-      storage: function() {},
+      storage: function () {},
     })
   ).toThrow();
   expect(() =>
     createStash({
       name: 'foo',
       selector: defaultSelector,
-      storage: new function Foo() {}(),
+      storage: new (function Foo() {})(),
     })
   ).toThrow();
   expect(() =>
