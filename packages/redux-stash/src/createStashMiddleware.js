@@ -33,7 +33,7 @@ const createStashMiddleware = (...stashes) => {
       writableStashes.forEach(({ name, selector, storage }) => {
         const value = selector(state);
 
-        if (!has(cache, name) || cache[name] !== value) {
+        if (!has(cache, name) || !Object.is(cache[name], value)) {
           if (isNil(value)) {
             storage.remove().catch(warning);
           } else {
