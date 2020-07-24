@@ -26,4 +26,4 @@ AsyncStorage.prototype.remove = function remove() {
   return ReactNativeAsyncStorage.removeItem(this.key);
 };
 
-export default AsyncStorage;
+export { AsyncStorage as default, AsyncStorage };

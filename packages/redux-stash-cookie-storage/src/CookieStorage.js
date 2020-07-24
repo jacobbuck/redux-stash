@@ -37,4 +37,4 @@ CookieStorage.prototype.remove = function remove() {
   });
 };
 
-export default CookieStorage;
+export { CookieStorage as default, CookieStorage };
