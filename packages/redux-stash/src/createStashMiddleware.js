@@ -1,4 +1,4 @@
-import { REHYDRATE } from './actionTypes';
+import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
 import { has, isNil, pluck, warning, zipObj } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
@@ -8,17 +8,17 @@ const createStashMiddleware = (...stashes) => {
   let rehydrated = false;
   let rehydrating = false;
 
-  return ({ getState }) => (next) => (action) => {
-    if (action.type === REHYDRATE) {
       rehydrating = true;
+  return ({ dispatch, getState }) => (next) => (action) => {
+    if (action.type === REQUEST_REHYDRATE) {
 
-      return Promise.all(
+      Promise.all(
         stashes.map(({ storage }) => storage.get().catch(warning))
       ).then((values) => {
         rehydrated = true;
         rehydrating = false;
 
-        return next({
+        dispatch({
           type: REHYDRATE,
           payload: zipObj(pluck('name', stashes), values),
         });
