@@ -5,18 +5,16 @@ const createStashMiddleware = (...stashes) => {
   const cache = {};
   const writableStashes = stashes.filter(({ readOnly }) => !readOnly);
 
-  let rehydrated = false;
-  let rehydrating = false;
+  let internalState = 'INITIAL';
 
-      rehydrating = true;
   return ({ dispatch, getState }) => (next) => (action) => {
     if (action.type === REQUEST_REHYDRATE) {
+      internalState = 'REHYDRATING';
 
       Promise.all(
         stashes.map(({ storage }) => storage.get().catch(warning))
       ).then((values) => {
-        rehydrated = true;
-        rehydrating = false;
+        internalState = 'REHYDRATED';
 
         dispatch({
           type: REHYDRATE,
@@ -27,7 +25,7 @@ const createStashMiddleware = (...stashes) => {
 
     const result = next(action);
 
-    if (rehydrated && !rehydrating) {
+    if (internalState === 'REHYDRATED') {
       const state = getState();
 
       writableStashes.forEach(({ name, selector, storage }) => {
