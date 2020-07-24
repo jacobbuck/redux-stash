@@ -1,4 +1,4 @@
-import { AsyncStorage as ReactNativeAsyncStorage } from 'react-native';
+import ReactNativeAsyncStorage from '@react-native-community/async-storage';
 import AsyncStorage from '../AsyncStorage';
 
 test('get method calls AsyncStorage.getItem() and returns a Promise', () => {
