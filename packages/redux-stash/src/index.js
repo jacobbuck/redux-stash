@@ -1,17 +1,7 @@
-import { REHYDRATE } from './actionTypes';
-import createStash from './createStash';
-import createStashMiddleware from './createStashMiddleware';
-import rehydrateStore from './rehydrateStore';
-import LocalStorage from './LocalStorage';
-import SessionStorage from './SessionStorage';
-import Storage from './Storage';
-
-export {
-  REHYDRATE,
-  createStash,
-  createStashMiddleware,
-  rehydrateStore,
-  LocalStorage,
-  SessionStorage,
-  Storage,
-};
+export { REHYDRATE } from './actionTypes';
+export { default as createStash } from './createStash';
+export { default as createStashMiddleware } from './createStashMiddleware';
+export { default as rehydrateStore } from './rehydrateStore';
+export { default as LocalStorage } from './LocalStorage';
+export { default as SessionStorage } from './SessionStorage';
+export { default as Storage } from './Storage';
