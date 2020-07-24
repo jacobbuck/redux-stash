@@ -1,8 +1,8 @@
-import { REHYDRATE } from '../actionTypes';
+import { REQUEST_REHYDRATE } from '../actionTypes';
 import rehydrateStore from '../rehydrateStore';
 
-test('dispatches REHYDRATE action on store ', () => {
+test('dispatches REQUEST_REHYDRATE action on store ', () => {
   const store = { dispatch: jest.fn() };
   rehydrateStore(store);
-  expect(store.dispatch).toHaveBeenCalledWith({ type: REHYDRATE });
+  expect(store.dispatch).toHaveBeenCalledWith({ type: REQUEST_REHYDRATE });
 });
