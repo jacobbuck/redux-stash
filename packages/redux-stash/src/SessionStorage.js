@@ -14,32 +14,20 @@ SessionStorage.prototype = Object.create(Storage.prototype);
 SessionStorage.prototype.constructor = SessionStorage;
 
 SessionStorage.prototype.get = function get() {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve(sessionStorage.getItem(this.key));
-    } catch (error) {
-      reject(error);
-    }
+  return new Promise((resolve) => {
+    resolve(sessionStorage.getItem(this.key));
   });
 };
 
 SessionStorage.prototype.set = function set(value) {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve(sessionStorage.setItem(this.key, value));
-    } catch (error) {
-      reject(error);
-    }
+  return new Promise((resolve) => {
+    resolve(sessionStorage.setItem(this.key, value));
   });
 };
 
 SessionStorage.prototype.remove = function remove() {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve(sessionStorage.removeItem(this.key));
-    } catch (error) {
-      reject(error);
-    }
+  return new Promise((resolve) => {
+    resolve(sessionStorage.removeItem(this.key));
   });
 };
 
