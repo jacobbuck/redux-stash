@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "coverage": "lerna run coverage",
-    "bootstrap": "lerna bootstrap",
+    "format": "prettier --write .",
     "test": "lerna run test"
   },
   "devDependencies": {
@@ -17,10 +18,5 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rollup": "^2.23.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
