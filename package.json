@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "coverage": "lerna run coverage",
     "format": "prettier --write .",
+    "postinstall": "lerna bootstrap",
     "test": "lerna run test"
   },
   "devDependencies": {
