@@ -9,7 +9,11 @@ export default {
       format: 'cjs',
       sourcemap: true,
     },
-    { file: 'lib/CookieStorage.esm.js', format: 'esm', sourcemap: true },
+    {
+      file: 'lib/CookieStorage.esm.js',
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
   external: ['js-cookie', 'redux-stash'],
   plugins: [babel({ babelHelpers: 'bundled' })],
