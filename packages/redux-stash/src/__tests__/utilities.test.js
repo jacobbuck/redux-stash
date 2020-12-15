@@ -1,13 +1,4 @@
-import { has, pluck, warning, zipObj } from '../utilities';
-
-describe('has', () => {
-  test('checks if an object has an own property with the specified name', () => {
-    const obj = { foo: 'bar' };
-    expect(has(obj, 'foo')).toBe(true);
-    expect(has(obj, 'bar')).toBe(false);
-    expect(has(obj, 'toString')).toBe(false);
-  });
-});
+import { pluck, warning, zipObj } from '../utilities';
 
 describe('pluck', () => {
   test('returns a new array with values of same named property off all objects in the array passed', () => {

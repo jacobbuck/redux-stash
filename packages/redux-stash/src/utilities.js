@@ -1,7 +1,3 @@
-// Checks if an object has an own property with the specified name.
-export const has = (obj, name) =>
-  Object.prototype.hasOwnProperty.call(obj, name);
-
 // Returns a new array by plucking a named property off all objects in the array supplied.
 export const pluck = (key, list) => list.map((item) => item[key]);
 

@@ -1,5 +1,5 @@
 import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
-import { has, pluck, warning, zipObj } from './utilities';
+import { pluck, warning, zipObj } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
   const cache = new Map();
