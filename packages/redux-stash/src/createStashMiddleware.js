@@ -31,13 +31,11 @@ const createStashMiddleware = (...stashes) => {
       writableStashes.forEach(({ name, selector, storage }) => {
         const value = selector(state);
 
-        if (!cache.has(name) || !Object.is(cache.get(name), value)) {
-          if (value == null) {
-            storage.remove().catch(warning);
-          } else {
-            storage.set(value).catch(warning);
-          }
-
+        if (value == null && cache.has(name)) {
+          storage.remove().catch(warning);
+          cache.delete(name);
+        } else if (!Object.is(cache.get(name), value)) {
+          storage.set(value).catch(warning);
           cache.set(name, value);
         }
       });
