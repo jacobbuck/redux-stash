@@ -32,13 +32,19 @@ const createStashMiddleware = (...stashes) => {
         const value = selector(state);
 
         if (value == null && cache.has(name)) {
-          storage.remove().then(() => {
-            cache.delete(name);
-          }).catch(warning);
+          storage
+            .remove()
+            .then(() => {
+              cache.delete(name);
+            })
+            .catch(warning);
         } else if (!Object.is(cache.get(name), value)) {
-          storage.set(value).then(() => {
-            cache.set(name, value);
-          }).catch(warning);
+          storage
+            .set(value)
+            .then(() => {
+              cache.set(name, value);
+            })
+            .catch(warning);
         }
       });
     }
