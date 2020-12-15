@@ -2,9 +2,6 @@
 export const has = (obj, name) =>
   Object.prototype.hasOwnProperty.call(obj, name);
 
-// Checks if the input value is null or undefined.
-export const isNil = (value) => value == null;
-
 // Returns a new array by plucking a named property off all objects in the array supplied.
 export const pluck = (key, list) => list.map((item) => item[key]);
 

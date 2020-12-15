@@ -1,5 +1,5 @@
 import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
-import { has, isNil, pluck, warning, zipObj } from './utilities';
+import { has, pluck, warning, zipObj } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
   const cache = {};
@@ -32,7 +32,7 @@ const createStashMiddleware = (...stashes) => {
         const value = selector(state);
 
         if (!has(cache, name) || !Object.is(cache[name], value)) {
-          if (isNil(value)) {
+          if (value == null) {
             storage.remove().catch(warning);
           } else {
             storage.set(value).catch(warning);
