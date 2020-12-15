@@ -2,7 +2,7 @@ import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
 import { has, pluck, warning, zipObj } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
-  const cache = {};
+  const cache = new Map();
   const writableStashes = stashes.filter(({ readOnly }) => !readOnly);
 
   let internalState = 'INITIAL';
@@ -31,14 +31,14 @@ const createStashMiddleware = (...stashes) => {
       writableStashes.forEach(({ name, selector, storage }) => {
         const value = selector(state);
 
-        if (!has(cache, name) || !Object.is(cache[name], value)) {
+        if (!cache.has(name) || !Object.is(cache.get(name), value)) {
           if (value == null) {
             storage.remove().catch(warning);
           } else {
             storage.set(value).catch(warning);
           }
 
-          cache[name] = value;
+          cache.set(name, value);
         }
       });
     }
