@@ -1,5 +1,5 @@
 import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
-import { warning, zipObj } from './utilities';
+import { warning } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
   const cache = new Map();
@@ -14,17 +14,16 @@ const createStashMiddleware = (...stashes) => {
       Promise.all(
         stashes.map(({ storage }) => storage.get().catch(warning))
       ).then((values) => {
+        const entries = stashes.map(({ name }, i) => [name, values[i]]);
+
         cache.clear();
-        stashes.forEach(({ name }, i) => {
-          cache.set(name, values[i]);
+        entries.forEach(([key, value]) => {
+          cache.set(key, value);
         });
 
         dispatch({
           type: REHYDRATE,
-          payload: zipObj(
-            stashes.map(({ name }) => name),
-            values
-          ),
+          payload: Object.fromEntries(entries),
         });
 
         internalState = 'REHYDRATED';
