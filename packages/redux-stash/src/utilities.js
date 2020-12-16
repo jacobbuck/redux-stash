@@ -1,6 +1,3 @@
-// Returns a new array by plucking a named property off all objects in the array supplied.
-export const pluck = (key, list) => list.map((item) => item[key]);
-
 // Output an error in the console.
 export const warning = (error) => {
   if (typeof console !== 'undefined' && typeof console.error === 'function') {

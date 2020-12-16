@@ -1,5 +1,5 @@
 import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
-import { pluck, warning, zipObj } from './utilities';
+import { warning, zipObj } from './utilities';
 
 const createStashMiddleware = (...stashes) => {
   const cache = new Map();
@@ -18,7 +18,10 @@ const createStashMiddleware = (...stashes) => {
 
         dispatch({
           type: REHYDRATE,
-          payload: zipObj(pluck('name', stashes), values),
+          payload: zipObj(
+            stashes.map(({ name }) => name),
+            values
+          ),
         });
       });
     }
