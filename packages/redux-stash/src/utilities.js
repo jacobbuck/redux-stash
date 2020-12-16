@@ -10,10 +10,3 @@ export const warning = (error) => {
     throw error;
   } catch (e) {}
 };
-
-// Returns a new object from an array of keys and array of values.
-export const zipObj = (keys, values) =>
-  keys.reduce((result, key, index) => {
-    result[key] = values[index];
-    return result;
-  }, {});
