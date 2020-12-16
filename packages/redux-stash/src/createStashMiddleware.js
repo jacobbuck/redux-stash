@@ -14,7 +14,10 @@ const createStashMiddleware = (...stashes) => {
       Promise.all(
         stashes.map(({ storage }) => storage.get().catch(warning))
       ).then((values) => {
-        internalState = 'REHYDRATED';
+        cache.clear();
+        stashes.forEach(({ name }, i) => {
+          cache.set(name, values[i]);
+        });
 
         dispatch({
           type: REHYDRATE,
@@ -23,6 +26,8 @@ const createStashMiddleware = (...stashes) => {
             values
           ),
         });
+
+        internalState = 'REHYDRATED';
       });
     }
 
