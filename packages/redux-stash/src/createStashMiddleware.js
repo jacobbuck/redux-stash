@@ -1,5 +1,5 @@
 import { REHYDRATE, REQUEST_REHYDRATE } from './actionTypes';
-import { warning } from './utilities';
+import warning from './warning';
 
 const createStashMiddleware = (...stashes) => {
   const cache = new Map();

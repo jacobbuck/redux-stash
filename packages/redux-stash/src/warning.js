@@ -1,5 +1,5 @@
 // Output an error in the console.
-export const warning = (error) => {
+const warning = (error) => {
   if (typeof console !== 'undefined' && typeof console.error === 'function') {
     console.error(error);
   }
@@ -10,3 +10,5 @@ export const warning = (error) => {
     throw error;
   } catch (e) {}
 };
+
+export default warning;
