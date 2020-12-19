@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/jacobbuck/redux-stash#readme",
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "redux-stash": "^1.1.0"
   },
   "peerDependencies": {

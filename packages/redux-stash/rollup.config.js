@@ -6,5 +6,11 @@ export default {
     { file: 'lib/index.cjs.js', format: 'cjs', sourcemap: true },
     { file: 'lib/index.esm.js', format: 'esm', sourcemap: true },
   ],
-  plugins: [babel({ babelHelpers: 'bundled' })],
+  external: [/@babel\/runtime/],
+  plugins: [
+    babel({
+      babelHelpers: 'runtime',
+      plugins: ['@babel/plugin-transform-runtime'],
+    }),
+  ],
 };

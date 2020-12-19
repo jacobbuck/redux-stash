@@ -15,6 +15,15 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['@react-native-community/async-storage', 'redux-stash'],
-  plugins: [babel({ babelHelpers: 'bundled' })],
+  external: [
+    /@babel\/runtime/,
+    '@react-native-community/async-storage',
+    'redux-stash',
+  ],
+  plugins: [
+    babel({
+      babelHelpers: 'runtime',
+      plugins: ['@babel/plugin-transform-runtime'],
+    }),
+  ],
 };

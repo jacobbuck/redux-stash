@@ -15,6 +15,11 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['js-cookie', 'redux-stash'],
-  plugins: [babel({ babelHelpers: 'bundled' })],
+  external: [/@babel\/runtime/, 'js-cookie', 'redux-stash'],
+  plugins: [
+    babel({
+      babelHelpers: 'runtime',
+      plugins: ['@babel/plugin-transform-runtime'],
+    }),
+  ],
 };
