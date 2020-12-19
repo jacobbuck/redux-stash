@@ -1,13 +1,12 @@
-function Storage(key) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (!(this instanceof Storage)) {
-      throw new TypeError('Cannot call a class as a function.');
+class Storage {
+  constructor(key) {
+    if (process.env.NODE_ENV !== 'production') {
+      if (typeof key !== 'string') {
+        throw new TypeError('Expected the key to be a string.');
+      }
     }
-    if (typeof key !== 'string') {
-      throw new TypeError('Expected the key to be a string.');
-    }
+    this.key = key;
   }
-  this.key = key;
 }
 
 export default Storage;

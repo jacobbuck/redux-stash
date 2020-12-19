@@ -1,29 +1,18 @@
 import ReactNativeAsyncStorage from '@react-native-community/async-storage';
 import { Storage } from 'redux-stash';
 
-function AsyncStorage() {
-  if (process.env.NODE_ENV !== 'production') {
-    if (!(this instanceof AsyncStorage)) {
-      throw new TypeError('Cannot call a class as a function.');
-    }
+class AsyncStorage extends Storage {
+  get() {
+    return ReactNativeAsyncStorage.getItem(this.key);
   }
 
-  Storage.apply(this, arguments);
+  set(value) {
+    return ReactNativeAsyncStorage.setItem(this.key, value);
+  }
+
+  remove() {
+    return ReactNativeAsyncStorage.removeItem(this.key);
+  }
 }
-
-AsyncStorage.prototype = Object.create(Storage.prototype);
-AsyncStorage.prototype.constructor = AsyncStorage;
-
-AsyncStorage.prototype.get = function get() {
-  return ReactNativeAsyncStorage.getItem(this.key);
-};
-
-AsyncStorage.prototype.set = function set(value) {
-  return ReactNativeAsyncStorage.setItem(this.key, value);
-};
-
-AsyncStorage.prototype.remove = function remove() {
-  return ReactNativeAsyncStorage.removeItem(this.key);
-};
 
 export { AsyncStorage as default, AsyncStorage };
