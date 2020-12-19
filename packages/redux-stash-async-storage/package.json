@@ -1,6 +1,6 @@
 {
   "name": "redux-stash-async-storage",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Persist and rehydrate parts or all of your Redux store.",
   "main": "lib/AsyncStorage.cjs.js",
   "module": "lib/AsyncStorage.esm.js",
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/jacobbuck/redux-stash#readme",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "redux-stash": "^1.1.0"
+    "redux-stash": "^1.2.0"
   },
   "peerDependencies": {
     "@react-native-community/async-storage": "*"
