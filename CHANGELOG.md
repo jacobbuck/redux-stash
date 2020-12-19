@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+### redux-stash-async-storage
+
+#### Added
+
+- Set `"sideEffects": false` in [package.json](./packages/redux-stash-async-storage/package.json).
+
+### redux-stash-cookie-storage
+
+#### Added
+
+- Set `"sideEffects": false` in [package.json](./packages/redux-stash-cookie-storage/package.json).
+
 ## v1.2.0 - 2020-12-19
 
 ### redux-stash
