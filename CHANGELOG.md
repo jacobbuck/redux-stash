@@ -1,5 +1,33 @@
 # Changelog
 
+## Unreleased
+
+### redux-stash
+
+#### Added
+
+- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) for Babel helpers.
+- Added source maps to build output.
+
+#### Changed
+
+- Refactored internal caching to reduce unnecessary I/O calls and refresh on hydrate.
+- Updated devDependencies.
+
+### redux-stash-async-storage
+
+#### Added
+
+- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) for Babel helpers.
+- Added source maps to build output.
+
+### redux-stash-cookie-storage
+
+#### Added
+
+- Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) for Babel helpers.
+- Added source maps to build output.
+
 ## v1.1.0 - 2020-07-25
 
 ### redux-stash
