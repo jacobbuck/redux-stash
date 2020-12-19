@@ -11,23 +11,23 @@ const createStashMiddleware = (...stashes) => {
     if (action.type === REQUEST_REHYDRATE) {
       internalState = 'REHYDRATING';
 
-      Promise.all(
-        stashes.map(({ storage }) => storage.get().catch(warning))
-      ).then((values) => {
-        const entries = stashes.map(({ name }, i) => [name, values[i]]);
+      Promise.all(stashes.map(({ storage }) => storage.get().catch(warning)))
+        .then((values) => {
+          const entries = stashes.map(({ name }, i) => [name, values[i]]);
 
-        cache.clear();
-        entries.forEach(([key, value]) => {
-          cache.set(key, value);
+          cache.clear();
+          entries.forEach(([key, value]) => {
+            cache.set(key, value);
+          });
+
+          dispatch({
+            type: REHYDRATE,
+            payload: Object.fromEntries(entries),
+          });
+        })
+        .finally(() => {
+          internalState = 'REHYDRATED';
         });
-
-        dispatch({
-          type: REHYDRATE,
-          payload: Object.fromEntries(entries),
-        });
-
-        internalState = 'REHYDRATED';
-      });
     }
 
     const result = next(action);
