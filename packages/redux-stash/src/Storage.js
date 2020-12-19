@@ -5,6 +5,7 @@ class Storage {
         throw new TypeError('Expected the key to be a string.');
       }
     }
+
     this.key = key;
   }
 }
