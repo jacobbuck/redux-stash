@@ -1,5 +1,8 @@
 {
   "private": true,
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
     "build": "lerna run build",
     "coverage": "jest --coverage",
