@@ -7,7 +7,7 @@ const createStashMiddleware = (...stashes) => {
 
   let internalState = 'INITIAL';
 
-  return ({ dispatch, getState }) => (next) => (action) => {
+  return (store) => (next) => (action) => {
     if (action.type === REQUEST_REHYDRATE) {
       internalState = 'REHYDRATING';
 
@@ -20,7 +20,7 @@ const createStashMiddleware = (...stashes) => {
             cache.set(key, value);
           });
 
-          dispatch({
+          store.dispatch({
             type: REHYDRATE,
             payload: Object.fromEntries(entries),
           });
@@ -33,7 +33,7 @@ const createStashMiddleware = (...stashes) => {
     const result = next(action);
 
     if (internalState === 'REHYDRATED') {
-      const state = getState();
+      const state = store.getState();
 
       writableStashes.forEach(({ name, selector, storage }) => {
         const value = selector(state);
