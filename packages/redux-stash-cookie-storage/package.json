@@ -32,6 +32,7 @@
   "dependencies": {
     "@babel/runtime": "^7.14.6",
     "js-cookie": "^2.2.1",
-    "redux-stash": "^1.2.0"
+    "redux-stash": "^1.2.0",
+    "tiny-invariant": "^1.1.0"
   }
 }

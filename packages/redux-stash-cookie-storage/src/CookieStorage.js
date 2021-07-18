@@ -1,16 +1,14 @@
 import * as Cookies from 'js-cookie';
 import { Storage } from 'redux-stash';
+import invariant from 'tiny-invariant';
 
 class CookieStorage extends Storage {
   constructor(key, options = {}) {
     super(key);
-
-    if (process.env.NODE_ENV !== 'production') {
-      if (typeof options !== 'object') {
-        throw new TypeError('Expected the options to be an object.');
-      }
-    }
-
+    invariant(
+      typeof options === 'object' && options !== null,
+      'Expected `options` to be an object'
+    );
     this.options = options;
   }
 

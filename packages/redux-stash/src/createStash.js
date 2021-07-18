@@ -1,3 +1,4 @@
+import invariant from 'tiny-invariant';
 import Storage from './Storage';
 
 const createStash = ({
@@ -6,20 +7,19 @@ const createStash = ({
   selector = () => {},
   storage,
 }) => {
-  if (process.env.NODE_ENV !== 'production') {
-    if (typeof name !== 'string') {
-      throw new TypeError('Expected "name" to be a string.');
-    }
-    if (typeof readOnly !== 'boolean') {
-      throw new TypeError('Expected "readOnly" to be a boolean.');
-    }
-    if (typeof selector !== 'function') {
-      throw new TypeError('Expected "selector" to be a function.');
-    }
-    if (!(storage instanceof Storage)) {
-      throw new TypeError('Expected "storage" to be an instance of Storage.');
-    }
-  }
+  invariant(typeof name === 'string', 'Expected `name` to be a string');
+  invariant(
+    typeof readOnly === 'boolean',
+    'Expected `readOnly` to be a boolean'
+  );
+  invariant(
+    typeof selector === 'function',
+    'Expected `selector` to be a function'
+  );
+  invariant(
+    storage instanceof Storage,
+    'Expected `storage` to be an instance of Storage'
+  );
   return {
     name,
     readOnly,
