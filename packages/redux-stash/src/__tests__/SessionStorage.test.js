@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import SessionStorage from '../SessionStorage';
 
 beforeEach(() => {

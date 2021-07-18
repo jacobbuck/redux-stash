@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import * as Cookies from 'js-cookie';
 import CookieStorage from '../CookieStorage';
 
