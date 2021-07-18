@@ -89,7 +89,7 @@ test('throws an error when storage isn’t an instanceof Storage', () => {
     localStorage,
     function () {},
     new FooStorage(),
-    { getItem() {}, setItem() {}, deleteItem() {} },
+    { get() {}, set() {}, delete() {} },
   ].forEach((storage) => {
     expect(() =>
       createStash({
