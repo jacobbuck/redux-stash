@@ -35,5 +35,10 @@
   },
   "peerDependencies": {
     "@react-native-community/async-storage": "*"
+  },
+  "peerDependenciesMeta": {
+    "@react-native-community/async-storage": {
+      "optional": true
+    }
   }
 }
