@@ -6,8 +6,7 @@ test('stores key when constructed', () => {
 });
 
 test("throws an error when key isn't a string", () => {
-  expect(() => new Storage()).toThrow();
-  expect(() => new Storage(null)).toThrow();
-  expect(() => new Storage(true)).toThrow();
-  expect(() => new Storage({ foo: 'bar' })).toThrow();
+  [null, undefined, true, ['foo'], { foo: 'bar' }].forEach((key) => {
+    expect(() => new Storage(key)).toThrow();
+  });
 });
