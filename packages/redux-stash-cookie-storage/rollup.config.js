@@ -1,21 +1,13 @@
 import babel from '@rollup/plugin-babel';
+import pkg from './package.json';
 
 export default {
   input: 'src/CookieStorage.js',
   output: [
-    {
-      exports: 'named',
-      file: 'lib/CookieStorage.cjs.js',
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: 'lib/CookieStorage.esm.js',
-      format: 'esm',
-      sourcemap: true,
-    },
+    { file: pkg.main, format: 'cjs', sourcemap: true, exports: 'named' },
+    { file: pkg.module, format: 'esm', sourcemap: true },
   ],
-  external: [/@babel\/runtime/, 'js-cookie', 'redux-stash'],
+  external: [/@babel\/runtime/, ...Object.keys(pkg.dependencies)],
   plugins: [
     babel({
       babelHelpers: 'runtime',

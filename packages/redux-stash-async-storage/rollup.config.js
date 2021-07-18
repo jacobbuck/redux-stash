@@ -1,24 +1,16 @@
 import babel from '@rollup/plugin-babel';
+import pkg from './package.json';
 
 export default {
   input: 'src/AsyncStorage.js',
   output: [
-    {
-      exports: 'named',
-      file: 'lib/AsyncStorage.cjs.js',
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: 'lib/AsyncStorage.esm.js',
-      format: 'esm',
-      sourcemap: true,
-    },
+    { file: pkg.main, format: 'cjs', sourcemap: true, exports: 'named' },
+    { file: pkg.module, format: 'esm', sourcemap: true },
   ],
   external: [
     /@babel\/runtime/,
-    '@react-native-community/async-storage',
-    'redux-stash',
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies),
   ],
   plugins: [
     babel({
