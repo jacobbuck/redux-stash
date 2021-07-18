@@ -8,6 +8,7 @@
     "coverage": "jest --coverage",
     "format": "prettier --write .",
     "postinstall": "lerna bootstrap",
+    "prepare": "husky install",
     "test": "jest"
   },
   "devDependencies": {
@@ -16,7 +17,7 @@
     "@babel/preset-env": "^7.14.7",
     "@rollup/plugin-babel": "^5.3.0",
     "babel-jest": "^27.0.6",
-    "husky": "^4.3.6",
+    "husky": "^6.0.0",
     "jest": "^27.0.6",
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.1",
