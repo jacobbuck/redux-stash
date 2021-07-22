@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/jacobbuck/redux-stash#readme",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "js-cookie": "^2.2.1",
     "redux-stash": "^1.2.0",
     "tiny-invariant": "^1.1.0"
