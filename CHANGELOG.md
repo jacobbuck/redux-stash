@@ -2,17 +2,38 @@
 
 ## Unreleased
 
+### redux-stash
+
+### Added
+
+- Added [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency.
+
+#### Changed
+
+- Changed type checking to use `invariant` function from [tiny-invariant](https://www.npmjs.com/package/tiny-invariant).
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.14.8.
+
 ### redux-stash-async-storage
 
 #### Added
 
 - Set `"sideEffects": false` in [package.json](./packages/redux-stash-async-storage/package.json).
 
+#### Changed
+
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.14.8.
+
 ### redux-stash-cookie-storage
 
 #### Added
 
+- Added [tiny-invariant](https://www.npmjs.com/package/tiny-invariant) dependency.
 - Set `"sideEffects": false` in [package.json](./packages/redux-stash-cookie-storage/package.json).
+
+#### Changed
+
+- Changed type checking to use `invariant` function from [tiny-invariant](https://www.npmjs.com/package/tiny-invariant).
+- Updated [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) dependency to v7.14.8.
 
 ## v1.2.0 - 2020-12-19
 
